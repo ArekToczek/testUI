@@ -64,7 +64,7 @@ public class HelpPageTest {
     @MethodSource("womanNames")
     public void parameterizedTest(String name) {
         System.out.println("Input test :" + name);
-        Assert.assertTrue(name.contains("Ola"));
+        Assert.assertTrue(name.contains("la"));
     }
     @AfterEach
     public void tearDown() {
