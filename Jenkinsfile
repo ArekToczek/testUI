@@ -15,12 +15,12 @@ pipeline {
         stage('Test execution for test_class ') {
             steps {
                 echo 'Executing test cases ...'
-                bat 'mvn test -Dtest=$test_class'
+                bat 'mvn test -Dtest=${test_class}'
             }
         }
         stage('Check if file exists') {
             steps {
-                bat 'ls $file_path'
+                bat 'ls ${file_path}'
             }
         }
     }
