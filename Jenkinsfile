@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    parameters {
+            string(name: 'test_class', defaultValue: '', description: 'Test class name')
+            string(name: 'file_path', defaultValue: '', description: 'Path to checked file')
+        }
 
     stages {
         stage('Git checkout') {
@@ -8,17 +12,16 @@ pipeline {
                 git branch: 'master', url: 'https://github.com/ArekToczek/testUI.git'
             }
         }
-        stage('Test execution') {
+        stage('Test execution for test_class ') {
             steps {
                 echo 'Executing test cases ...'
-                bat 'mvn clean install'
+                bat 'mvn test -Dtest=$test_class'
             }
         }
-        stage('Clean workspace') {
+        stage('Check if file exists') {
             steps {
-                        echo 'Cleaning workspace ...'
-                        //cleanWs()
-                    }
+                bat 'ls $file_path'
             }
+        }
     }
 }
