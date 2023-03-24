@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Check if file exists') {
             steps {
-                bat 'ls ${file_path}'
+                bat 'dir .\${file_path}'
             }
         }
     }
