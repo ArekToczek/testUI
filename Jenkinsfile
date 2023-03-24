@@ -14,5 +14,11 @@ pipeline {
                 bat 'mvn clean install'
             }
         }
+        stage('Clean workspace') {
+            steps {
+                        echo 'Cleaning workspace ...'
+                        cleanWs()
+                    }
+            }
     }
 }
