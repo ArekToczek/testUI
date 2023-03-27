@@ -52,7 +52,7 @@ public class HelpPageTest {
         assumeTrue(TRUE);
         Assert.assertEquals(LINK1_TEXT, objGetHelpPage.getTextlink1LatestNews());
         System.out.println("Link nr 1 text: " + objGetHelpPage.getTextlink1LatestNews());
- 
+
         //redirect to link2 Latest news card
         objGetHelpPage.clikLink2LatestNews();
         Assert.assertEquals(LINK2_PAGE_TITLE, driver.getTitle());

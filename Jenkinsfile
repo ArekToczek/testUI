@@ -20,8 +20,8 @@ pipeline {
         }
         stage('Check if file exists') {
             steps {
-                echo ${test_class}
-                echo ${file_path}
+                println ${test_class}
+                println ${file_path}
                 bat 'dir ${file_path}'
             }
         }
